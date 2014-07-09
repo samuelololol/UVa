@@ -3,42 +3,40 @@
 #include <string>
 #include <sstream>
 
-using std::cout;
-using std::endl;
-using std::ifstream;
-using std::ofstream;
-using std::stringstream;
-using std::string;
 
-string problem_solver(const string& input){
+std::string problem_solver(const std::string& input){
     //logic ...
     return input;
 }
 
 
 int main(){
-    string line;
-    string result;
-    stringstream sstr;
-
-    ifstream inputfile;
-    ofstream outputfile;
-    inputfile.open("input.txt");
-    outputfile.open("output.txt");
+    std::string line;
+    std::string result;
+    std::stringstream sstr;
 
     //input
-    cout << "input.txt" << endl;
-    cout << "==========================" << endl;
-    while( sstr << inputfile.rdbuf() );
-    cout << sstr.str() << endl;
+    std::cout << "input.txt" << std::endl;
+    std::cout << "==========================" << std::endl;
+
+    std::ifstream inputfile;
+    inputfile.open("input.txt");
+    while(sstr << inputfile.rdbuf());
+    std::cout << sstr.str() << std::endl;
     inputfile.close();
 
     // logic
     result = problem_solver(sstr.str());
 
     // result
-    cout << endl << "output.txt" << endl;
-    cout << "==========================" << endl << result << endl;
+    std::cout << std::endl << "output.txt" << std::endl;
+    std::cout << "==========================" << std::endl;
+    std::cout << result << std::endl;
+
+    std::ofstream outputfile;
+    outputfile.open("output.txt");
     outputfile << result;
+    outputfile.close();
+
     return 0;
 }
