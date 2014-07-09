@@ -19,3 +19,8 @@
 *.exe
 *.out
 *.app
+
+# common input and output
+input.txt
+output.txt
+
