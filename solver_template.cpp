@@ -6,7 +6,9 @@
 
 std::string problem_solver(const std::string& input){
     //logic ...
-    return input;
+    std::string result = input;
+
+    return result;
 }
 
 
